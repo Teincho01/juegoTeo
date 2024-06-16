@@ -7,6 +7,7 @@ let palabraSeleccionada = palabras[Math.floor(Math.random() * palabras.length)];
 let letrasAdivinadas = [];
 let errores = 0;
 const maxErrores = 10;
+let primerJuego = true;
 
 const mostrarPalabra = document.getElementById('mostrar-palabra');
 const letrasContenedor = document.getElementById('letras');
@@ -130,6 +131,10 @@ function deshabilitarLetras() {
 }
 
 function reiniciarJuego() {
+    if (primerJuego){
+        botonReiniciar.textContent = 'Reiniciar Juego';
+        primerJuego = false
+    }
     palabraSeleccionada = palabras[Math.floor(Math.random() * palabras.length)];
     letrasAdivinadas = [];
     errores = 0;
