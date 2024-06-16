@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="resources\logo\logo-seguridad-vial.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Juego del Ahorcado</title>
     <link rel="stylesheet" href="./resources/css/styles.css">
 </head>
 <body>
+    <div id="boton-atras">
+        <button id="boton-volver"><i class="fa-solid fa-arrow-left"></i></button>
+    </div>
     <div id="contenedor-juego">
         <h1>Juego del Ahorcado</h1>
         <canvas id="canvas" width="200" height="200"></canvas>
@@ -20,6 +25,14 @@
         <p id="mensaje"></p>
         <button id="boton-reiniciar">Iniciar Juego</button>
     </div>
+    <footer class="footer-container">
+        <div class="top-row">
+            <img src="resources\logo\LogoUADE.png" alt="Logo UADE">
+            <h3>Diseño y desarrollo web - 2024</h3>
+            <h3>Teo Valentín Shindo</h3>
+        </div>
+        <p>Derechos reservados - Sitio desarrollado para uso educativo</p>
+    </footer>
     <script src="./resources/js/script.js"></script>
 </body>
 </html>

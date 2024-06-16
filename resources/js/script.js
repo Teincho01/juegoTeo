@@ -15,6 +15,7 @@ const mensaje = document.getElementById('mensaje');
 const mensajePalabra = document.getElementById('mensajePalabra');
 const mensajeApoyo = document.getElementById('mensajeApoyo');
 const botonReiniciar = document.getElementById('boton-reiniciar');
+const botonVolver = document.getElementById('boton-volver')
 const canvas = document.getElementById('canvas');
 const contexto = canvas.getContext('2d');
 
@@ -127,9 +128,11 @@ function adivinarLetra(letra) {
 
 function deshabilitarLetras() {
     const letrasElementos = document.querySelectorAll('.letra');
-    letrasElementos.forEach(letraElemento => letraElemento.removeEventListener('click', adivinarLetra));
+    letrasElementos.forEach(letraElemento => {
+        letraElemento.classList.add('letra-usada');
+        letraElemento.style.pointerEvents = 'none'; 
+    });
 }
-
 function reiniciarJuego() {
     if (primerJuego){
         botonReiniciar.textContent = 'Reiniciar Juego';
@@ -219,5 +222,8 @@ function dibujarAhorcado() {
             break;
     }
 }
+botonVolver.addEventListener('click', () => {
+    window.history.back();
 
+});
 botonReiniciar.addEventListener('click', reiniciarJuego);
