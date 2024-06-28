@@ -6,31 +6,40 @@
     --red: #FF232B;
     --black: #535353;
     --deep-black: #22262A;
-  }
-html{
+}
+
+html {
     scroll-behavior: smooth;
 }
+
 body {
     font-family: "Roboto", sans-serif;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color:var(--yellow);
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: var(--yellow);
     margin: 0;
+    min-height: 100vh;
 }
+#contenedor-info {
+    background-color: var(--deep-black);
+    color: var(--white);
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
 
+}
 #contenedor-juego {
     text-align: center;
     background-color: var(--bg-white);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 45%);
-    max-width: 90%; 
-    width: 600px; 
-    margin-bottom: 60px;
-    position: relative; 
-    z-index: 1; 
+    max-width: 90%;
+    width: 600px;
+    margin: 120px auto 60px auto;
+    position: relative;
+    z-index: 1;
 }
 
 #mostrar-palabra {
@@ -78,12 +87,14 @@ body {
     font-weight: bold;
     transition: background-color 0.3s;
 }
+
 #boton-reiniciar:hover {
     background-color: var(--blue);
 }
-#boton-volver{
+
+#boton-volver {
     position: absolute;
-    top: 20px;
+    top: 100px;
     left: 20px;
     padding: 10px 20px;
     font-size: 16px;
@@ -96,7 +107,8 @@ body {
     transition: background-color 0.3s;
     z-index: 2;
 }
-#boton-volver:hover{
+
+#boton-volver:hover {
     background-color: var(--red);
 }
 
@@ -105,16 +117,16 @@ canvas {
 }
 
 .footer-container {
-    position: fixed;
+    position: relative;
     bottom: 0;
     left: 0;
     width: 100%;
     background-color: var(--deep-black);
     padding: 10px;
-    font-size: 14px; 
-    color: var(--white);
+    font-size: 14px;
+    color: var (--white);
     text-align: center;
-    z-index: 100; 
+    z-index: 100;
 }
 
 .footer-container .top-row {
@@ -124,22 +136,24 @@ canvas {
     align-items: center;
 }
 
-.footer-container .top-row > img {
+.footer-container .top-row>img {
     width: 100px;
 }
 
-.footer-container .top-row > h3 {
+.footer-container .top-row>h3 {
     display: none;
 }
 
-.footer-container > p {
+.footer-container>p {
     display: none;
 }
+
 @media (max-width: 768px) {
     #contenedor-juego {
-        width: 90%; /* Ajusta el ancho máximo */
-        max-width: 90%; /* Limita el ancho máximo */
+        width: 90%;
+        max-width: 90%;
     }
+
     #mostrar-palabra {
         font-size: 20px;
         letter-spacing: 3px;
@@ -151,7 +165,9 @@ canvas {
         font-size: 16px;
     }
 
-    #mensaje, #mensajePalabra, #mensajeApoyo {
+    #mensaje,
+    #mensajePalabra,
+    #mensajeApoyo {
         font-size: 16px;
     }
 
@@ -161,9 +177,10 @@ canvas {
     }
 }
 
-@media (min-width: 768px) {
+@media only screen and (min-width: 768px) {
+    /* Footer */
     .footer-container {
-        height: 55px;
+        height: auto;
         padding: 10px;
     }
 
@@ -175,17 +192,17 @@ canvas {
         align-items: center;
     }
 
-    .footer-container .top-row > h3 {
+    .footer-container .top-row>h3 {
         display: block;
-        color: var(--bg-white);
+        color: #fbfbfb;
         font-weight: 500;
     }
 
-    .footer-container > p {
+    .footer-container>p {
         display: block;
         color: #777777;
         font-weight: 500;
         text-align: center;
-        font-size: 0.8rem;
+        font-size: .8rem;
     }
 }

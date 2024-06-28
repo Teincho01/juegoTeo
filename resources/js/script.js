@@ -18,10 +18,15 @@ const botonReiniciar = document.getElementById('boton-reiniciar');
 const botonVolver = document.getElementById('boton-volver')
 const canvas = document.getElementById('canvas');
 const contexto = canvas.getContext('2d');
+const aciertos = document.getElementById('aciertos');
 
 function mostrarPalabraEnPantalla() {
     const display = palabraSeleccionada.split('').map(letra => letrasAdivinadas.includes(letra) ? letra : '_').join(' ');
     mostrarPalabra.textContent = display;
+}
+
+function mostrarAciertosRestantes() {
+    aciertos.textContent = 'Aciertos Restantes: ' + (maxErrores - errores);
 }
 
 function mostrarLetras() {
@@ -123,6 +128,7 @@ function adivinarLetra(letra) {
         }
         mostrarPalabraEnPantalla();
         mostrarLetras();
+        mostrarAciertosRestantes();
     }
 }
 
@@ -147,6 +153,7 @@ function reiniciarJuego() {
     contexto.clearRect(0, 0, canvas.width, canvas.height);
     mostrarPalabraEnPantalla();
     mostrarLetras();
+    mostrarAciertosRestantes();
 }
 
 function dibujarAhorcado() {
