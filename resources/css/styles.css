@@ -212,8 +212,8 @@ canvas {
     }
     #boton-volver {
         position: absolute;
-        top: 20px; /* Adjust this value as needed to avoid overlap */
-        left: 20px; /* Adjust this value as needed to avoid overlap */
+        top: 20px; 
+        left: 20px; 
         padding: 10px 20px;
         font-size: 16px;
         cursor: pointer;
