@@ -17,13 +17,17 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    background-color: var(--yellow);
+    background-color: var(--white);
     min-height: 100vh;
 }
 
 html, body {
     height: 100%;
     margin: 0;
+}
+
+main {
+    overflow-y: auto;
 }
 
 .main-container {
@@ -36,7 +40,7 @@ html, body {
 
 #contenedor-info {
     background-color: var(--deep-black);
-    color: var(--white);
+    color: var(--bg-white);
     padding: 20px;
     text-align: center;
     margin-bottom: 20px;
@@ -50,10 +54,10 @@ html, body {
     background-color: var(--bg-white);
     padding: 15px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 45%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.45);
     max-width: 90%;
     width: 500px;
-    margin-bottom: 60px;
+    margin-bottom: 80px;
     position: relative;
     z-index: 1;
 }

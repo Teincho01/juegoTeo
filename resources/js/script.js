@@ -15,7 +15,6 @@ const mensaje = document.getElementById('mensaje');
 const mensajePalabra = document.getElementById('mensajePalabra');
 const mensajeApoyo = document.getElementById('mensajeApoyo');
 const botonReiniciar = document.getElementById('boton-reiniciar');
-const botonVolver = document.getElementById('boton-volver')
 const canvas = document.getElementById('canvas');
 const contexto = canvas.getContext('2d');
 const aciertos = document.getElementById('aciertos');
@@ -237,8 +236,5 @@ function dibujarAhorcado() {
             break;
     }
 }
-botonVolver.addEventListener('click', () => {
-    window.history.back();
 
-});
 botonReiniciar.addEventListener('click', reiniciarJuego);
