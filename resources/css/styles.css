@@ -30,9 +30,8 @@ main {
     overflow-y: auto;
 }
 
-* > span {
+.blue-text {
     color: var(--blue);
-    font-weight: bold;
 }
 
 .main-container {
