@@ -18,8 +18,12 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     background-color: var(--yellow);
-    margin: 0;
     min-height: 100vh;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
 }
 
 .main-container {
@@ -104,7 +108,7 @@ body {
     background-color: var(--blue);
 }
 
-#boton-volver {
+/* #boton-volver {
     position: absolute;
     top: 80px;
     left: 20px;
@@ -123,41 +127,35 @@ body {
 #boton-volver:hover {
     background-color: var(--red);
 }
-
+*/
 canvas {
     margin-bottom: 20px;
 }
 
 .footer-container {
-    position: relative;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: var(--deep-black);
-    padding: 10px;
-    font-size: 14px;
-    color: var (--white);
-    text-align: center;
-    z-index: 100;
+  width: 100vw;
+  height: 50px;
+  background-color: var(--deep-black);
 }
 
 .footer-container .top-row {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
-.footer-container .top-row>img {
-    width: 100px;
+.footer-container .top-row > img {
+  width: 100px;
 }
 
-.footer-container .top-row>h3 {
-    display: none;
+.footer-container .top-row > h3 {
+  display: none;
 }
 
-.footer-container>p {
-    display: none;
+.footer-container > p {
+  display: none;
 }
 
 @media (max-width: 768px) { /* mobile */
@@ -210,10 +208,10 @@ canvas {
         width: 300px;
         margin-right: 20px;
     }
-    #boton-volver {
+   /* #boton-volver {
         position: absolute;
-        top: 20px; /* Adjust this value as needed to avoid overlap */
-        left: 20px; /* Adjust this value as needed to avoid overlap */
+        top: 20px; 
+        left: 20px; 
         padding: 10px 20px;
         font-size: 16px;
         cursor: pointer;
@@ -224,7 +222,8 @@ canvas {
         font-weight: bold;
         transition: background-color 0.3s;
         z-index: 2;
-    }
+    }*/
+    
 
     /* Footer */
     .footer-container {

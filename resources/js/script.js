@@ -38,7 +38,7 @@ function mostrarLetras() {
         letraElemento.classList.add('letra');
         letraElemento.addEventListener('click', () => adivinarLetra(letra));
         if (letrasAdivinadas.includes(letra) || errores === maxErrores || palabraSeleccionada.split('').every(letra => letrasAdivinadas.includes(letra))) {
-            letraElemento.style.visibility = 'hidden'; 
+            letraElemento.style.visibility = 'hidden';
         }
         letrasContenedor.appendChild(letraElemento);
     }
@@ -144,11 +144,11 @@ function deshabilitarLetras() {
     const letrasElementos = document.querySelectorAll('.letra');
     letrasElementos.forEach(letraElemento => {
         letraElemento.classList.add('letra-usada');
-        letraElemento.style.pointerEvents = 'none'; 
+        letraElemento.style.pointerEvents = 'none';
     });
 }
 function reiniciarJuego() {
-    if (primerJuego){
+    if (primerJuego) {
         botonReiniciar.textContent = 'Reiniciar Juego';
         primerJuego = false
     }

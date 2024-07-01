@@ -11,12 +11,34 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Juego del Ahorcado</title>
     <link rel="stylesheet" href="./resources/css/styles.css">
+    <link rel="stylesheet" href="./resources/css/navBar.css">
 </head>
 
 <body>
-    <div id="boton-atras">
-        <button id="boton-volver"><i class="fa-solid fa-arrow-left"></i></button>
-    </div>
+    <div class="nav-bar-container">
+        <div class="nav-left">
+          <img src="./resources/images/logo-seguridad-vial.png" alt="top-left-logo">
+        </div>
+        <ul class="nav-right">
+          <li><a href="https://yuchan45.github.io/ddw-tp-equipo10/index.html#banner">Inicio</a></li>
+          <li><a href="https://yuchan45.github.io/ddw-tp-equipo10/index.html#goal">Objetivo</a></li>
+          <li><a href="https://yuchan45.github.io/ddw-tp-equipo10/views/integrantes.html">Integrantes</a></li>
+          <li><a href="https://yuchan45.github.io/ddw-tp-equipo10/views/avances.html">Avances</a></li>
+          <li><a href="https://yuchan45.github.io/ddw-tp-equipo10/views/juegos.html">Juegos</a></li>
+        </ul>
+        <div class="menu-btns">
+          <i class="fa-bars fa" id="menu"></i>
+        </div>
+      </div>
+      <div class="menu-overlay hidden-menu">
+        <ul class="items">
+          <li><a href="https://yuchan45.github.io/ddw-tp-equipo10/index.html#banner">Inicio</a></li>
+          <li><a href="https://yuchan45.github.io/ddw-tp-equipo10/index.html#goal">Objetivo</a></li>
+          <li><a href="https://yuchan45.github.io/ddw-tp-equipo10/views/integrantes.html">Integrantes</a></li>
+          <li><a href="https://yuchan45.github.io/ddw-tp-equipo10/views/avances.html">Avances</a></li>
+          <li><a href="https://yuchan45.github.io/ddw-tp-equipo10/views/juegos.html">Juegos</a></li>
+        </ul>
+      </div>
     <div class="main-container">
         <div id="contenedor-info">
             <h1>Cómo jugar</h1>
@@ -42,10 +64,11 @@
         <div class="top-row">
             <img src="resources/logo/LogoUADE.png" alt="Logo UADE">
             <h3>Diseño y desarrollo web - 2024</h3>
-            <h3>Teo Valentín Shindo</h3>
+            <h3>Equipo 10</h3>
         </div>
         <p>Derechos reservados - Sitio desarrollado para uso educativo</p>
     </footer>
+    <script src="./resources/js/navBarBehaviour.js"></script>
     <script src="./resources/js/script.js"></script>
 </body>
 
