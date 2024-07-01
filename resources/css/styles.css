@@ -30,6 +30,11 @@ main {
     overflow-y: auto;
 }
 
+* > span {
+    color: var(--blue);
+    font-weight: bold;
+}
+
 .main-container {
     display: flex;
     flex-direction: column;
@@ -41,6 +46,9 @@ main {
 #contenedor-info {
     background-color: var(--deep-black);
     color: var(--bg-white);
+    letter-spacing: .5px;
+    word-spacing: .5;
+    line-height: 1.5;
     padding: 20px;
     text-align: center;
     margin-bottom: 20px;
