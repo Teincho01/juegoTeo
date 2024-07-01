@@ -26,7 +26,7 @@ function mostrarPalabraEnPantalla() {
 }
 
 function mostrarAciertosRestantes() {
-    aciertos.textContent = 'Aciertos Restantes: ' + (maxErrores - errores);
+    aciertos.innerHTML = '<strong>Aciertos Restantes: </strong>' + (maxErrores - errores);
 }
 
 function mostrarLetras() {
@@ -37,10 +37,15 @@ function mostrarLetras() {
         letraElemento.textContent = letra;
         letraElemento.classList.add('letra');
         letraElemento.addEventListener('click', () => adivinarLetra(letra));
-        if (letrasAdivinadas.includes(letra)) {
-            letraElemento.classList.add('oculto');
+        if (letrasAdivinadas.includes(letra) || errores === maxErrores || palabraSeleccionada.split('').every(letra => letrasAdivinadas.includes(letra))) {
+            letraElemento.style.visibility = 'hidden'; 
         }
         letrasContenedor.appendChild(letraElemento);
+    }
+    if (errores === maxErrores || palabraSeleccionada.split('').every(letra => letrasAdivinadas.includes(letra))) {
+        letrasContenedor.style.display = 'none';
+    } else {
+        letrasContenedor.style.display = 'block';
     }
 }
 
@@ -50,7 +55,10 @@ function mostrarMensajeFinal(resultado) {
             mensaje.textContent = '¡Felicidades! ¡Adivinaste la palabra!';
             break;
         case 'perdiste':
-            mensaje.textContent = `¡Juego Terminado! La palabra era: ${palabraSeleccionada}`;
+            mensaje.textContent = `¡Juego Terminado! La palabra era: `;
+            const palabraFinal = document.createElement('strong');
+            palabraFinal.textContent = palabraSeleccionada.toUpperCase();
+            mensaje.appendChild(palabraFinal);
             break;
     }
     mostrarMensajeApoyo();
