@@ -18,10 +18,15 @@ const botonReiniciar = document.getElementById('boton-reiniciar');
 const botonVolver = document.getElementById('boton-volver')
 const canvas = document.getElementById('canvas');
 const contexto = canvas.getContext('2d');
+const aciertos = document.getElementById('aciertos');
 
 function mostrarPalabraEnPantalla() {
     const display = palabraSeleccionada.split('').map(letra => letrasAdivinadas.includes(letra) ? letra : '_').join(' ');
     mostrarPalabra.textContent = display;
+}
+
+function mostrarAciertosRestantes() {
+    aciertos.innerHTML = '<strong>Aciertos Restantes: </strong>' + (maxErrores - errores);
 }
 
 function mostrarLetras() {
@@ -32,10 +37,15 @@ function mostrarLetras() {
         letraElemento.textContent = letra;
         letraElemento.classList.add('letra');
         letraElemento.addEventListener('click', () => adivinarLetra(letra));
-        if (letrasAdivinadas.includes(letra)) {
-            letraElemento.classList.add('oculto');
+        if (letrasAdivinadas.includes(letra) || errores === maxErrores || palabraSeleccionada.split('').every(letra => letrasAdivinadas.includes(letra))) {
+            letraElemento.style.visibility = 'hidden'; 
         }
         letrasContenedor.appendChild(letraElemento);
+    }
+    if (errores === maxErrores || palabraSeleccionada.split('').every(letra => letrasAdivinadas.includes(letra))) {
+        letrasContenedor.style.display = 'none';
+    } else {
+        letrasContenedor.style.display = 'block';
     }
 }
 
@@ -45,7 +55,10 @@ function mostrarMensajeFinal(resultado) {
             mensaje.textContent = '¡Felicidades! ¡Adivinaste la palabra!';
             break;
         case 'perdiste':
-            mensaje.textContent = `¡Juego Terminado! La palabra era: ${palabraSeleccionada}`;
+            mensaje.textContent = `¡Juego Terminado! La palabra era: `;
+            const palabraFinal = document.createElement('strong');
+            palabraFinal.textContent = palabraSeleccionada.toUpperCase();
+            mensaje.appendChild(palabraFinal);
             break;
     }
     mostrarMensajeApoyo();
@@ -123,6 +136,7 @@ function adivinarLetra(letra) {
         }
         mostrarPalabraEnPantalla();
         mostrarLetras();
+        mostrarAciertosRestantes();
     }
 }
 
@@ -147,6 +161,7 @@ function reiniciarJuego() {
     contexto.clearRect(0, 0, canvas.width, canvas.height);
     mostrarPalabraEnPantalla();
     mostrarLetras();
+    mostrarAciertosRestantes();
 }
 
 function dibujarAhorcado() {
